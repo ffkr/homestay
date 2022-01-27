@@ -75,7 +75,7 @@ _enjoy your stay, btw_ <:761954:935507090645078016>**`)
   channel.send(embed)
 });
 
-client.login('OTI5ODMyODUwNzg4ODcyMTky.YdtEUw.pXc0T7_ITYDIIwFGr8e4HMHJO-Q');
+client.login('');
 
 client.on("ready", () => {
 
