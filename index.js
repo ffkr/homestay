@@ -38,13 +38,12 @@ Semoga harimu baik!** <a:3073gawrgurafingerguns:924206337594892358>`);
   if (message.content === 'welcome') {
 
     message.channel.send(`<a:pinkwelcome1:936239443269013604><a:pinkwelcome2:936239450281902121>`);
-     message.delete()
   }
 
 });
 
 client.on("guildMemberAdd",(member) => {
-const message = `Welcome ${member.user}`;
+const message = `**WELCOME** ${member.user}`;
 const channel = member.guild.channels.cache.get('915059498991902776')
 channel.send(message);
 });
@@ -75,13 +74,8 @@ _enjoy your stay, btw_ <:761954:935507090645078016>**`)
   channel.send(embed)
 });
 
-client.login('');
+client.login('OTI5ODMyODUwNzg4ODcyMTky.YdtEUw.pXc0T7_ITYDIIwFGr8e4HMHJO-Q');
 
-client.on("ready", () => {
-
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`)
-
-});
 
 client.on("message", async message => {
   if (message.author.bot) return;
@@ -93,6 +87,16 @@ client.on("message", async message => {
   if (command === "say") {
 
    if (message.author.id !== "781654965893988383") return message.channel.send(`Tidak punya akses`)
+
+  const sayMessage = args.join(" ");
+  message.delete().catch(O_o => { });
+  message.channel.send(sayMessage);
+
+  }
+
+    if (command === "say1") {
+
+   if (message.author.id !== "487182077351952385") return message.channel.send(`Tidak punya akses`)
 
   const sayMessage = args.join(" ");
   message.delete().catch(O_o => { });
@@ -122,5 +126,34 @@ message.channel.send(exampleEmbed);
 message.delete().catch(O_o=>{}); 
     
   }
+
+         if(command === "sf"){
+
+ if (message.author.id !== "781654965893988383") return message.channel.send(`Tidak punya akses`)
+
+   const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0b0b0b')
+  .setImage(args.join(' '))
+  
+message.channel.send(exampleEmbed);
+message.delete().catch(O_o=>{}); 
+    
+  }
+
+
+ if(command === "avatar") {
+  
+ let member = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
+       let avatar = member.displayAvatarURL({ size: 1024, dynamic: true });
+       
+       const embed = new Discord.MessageEmbed()
+        .setTitle(member.username)
+        .setImage(avatar)
+        .setColor("BLACK")
+        .setAuthor(member.username, avatar, avatar);
+        message.channel.send(embed);
+    
+}
+
 
   });
